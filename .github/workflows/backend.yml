@@ -10,24 +10,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v3
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
 
-    - name: Install Dependencies
-      run: |
-        cd server
-        npm install
+      - name: Install Dependencies
+        run: |
+          cd backend
+          npm install
 
-    - name: Run Tests (Optional)
-      run: |
-        cd server
-        npm test
-      continue-on-error: true
+      - name: Run Tests (Optional)
+        run: |
+          cd backend
+          npm test
+        continue-on-error: true
 
-    - name: Deploy Placeholder
-      run: echo "Add your deployment script or command here"
+      - name: Deploy Placeholder
+        run: echo "Add your deployment script or command here"
+
